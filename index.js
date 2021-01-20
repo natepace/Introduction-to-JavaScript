@@ -74,8 +74,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(a){
+    return a * 7;
 }
 
 
@@ -107,8 +107,35 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
+function hungryDog(lb, age){
     /*add your code here*/
+    let amount = 0;
+    if (age >= 1){
+      if (lb < 6){
+        amount = .05 * lb;
+      }
+      else if(lb < 11){
+        amount = .04 * lb;
+      }
+      else if (lb < 16){
+        amount = .03 * lb;
+      }
+      else if (lb > 15){
+        amount = .02 * lb;
+      }
+    }
+    else if (age < 1){
+      if(age > .167 && age < .333){
+        amount = .10 * lb;
+      }
+      else if (age > .333 && age < .583){
+        amount = .05 * lb;
+      }
+      else if (age > .583 && age < 1){
+        amount = .04 * lb;
+      }   
+    }
+    return amount;
   }
 
 
@@ -134,9 +161,40 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+
+// i get that this wasnt necessary now.vvvv
+
+const num = Math.floor(Math.random() * 3);
+if (num === 0){
+  let comchoice = "rock";
 }
+else if (num === 1){
+  let comchoice = "paper";
+}
+else if (num === 2){
+  let comchoice = "scissors";
+}
+
+
+function game(user, computer){
+  let result = 0;
+  let tie = "it's a tie";
+  let win = "you win!";
+  let lose = "you lose!";
+  if (computer === user){
+    result = tie;
+  }
+  else if ((user === 'rock' && computer === 'paper')|| (user === 'paper' && computer === 'scissors')||(user === 'scissors' && computer === 'rock')){
+    result = lose;
+  }
+  else if ((user === 'rock' && computer === 'scissors') || (user === 'paper' && computer === 'rock') || (user === 'scissors' && computer === 'paper')){
+    result = win;
+  }
+  return result;
+}
+    
+
+
   
   
 
@@ -151,8 +209,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(km){
+    return km * .621371;
+    
   }
 
 
@@ -165,9 +224,19 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(feet){
+    let cm = 0;
+    cm = (feet / 30.48);
+    return cm;
   }
+
+// function annoyingSong(num){
+//   let x = num.toString();
+//   num = num - 1;
+//   let y = num.toString();
+//   let final = x + " bottles of soda on the wall, " + x + " bottles of soda, take one down pass it around " + y + " bottles of soda on the wall";
+//       return final;
+// }
  
 
 
@@ -181,9 +250,21 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+// function annoyingSong(num){
+//   for(i = num; i > 0; i--){
+//     let result = num + " bottles of soda on the wall, " + num + " bottles of soda, take one down pass it around " + (num - 1) + " bottles of soda on the wall";
+//   }
+// return result;
+// }
+
+function annoyingSong(num){
+  let x = num.toString();
+  num = num - 1;
+  let y = num.toString();
+  let final = x + " bottles of soda on the wall, " + x + " bottles of soda, take one down pass it around " + y + " bottles of soda on the wall";
+      return final;
+}
+ 
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -201,8 +282,41 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+// function grade(score){
+//   /*Your Code here */
+//   let grade = 0;
+//   if(score >= 90){
+//     return 'you got an A';
+//   }
+//   else if (score >= 80){
+//     return 'you got a B';
+//   }
+//   else if (score >= 70){
+//     return 'you got a C';
+//   }
+//   else if (score >= 60){
+//     return 'you got a D';
+//   }
+//   else if (score < 60){
+//     return 'you got an F';
+//   }
+//   }
+function grade(score){
+  if (score >= 90){
+    return 'you got an A';
+  }
+  if (score >= 80){
+    return 'you got a B';
+  }
+  if (score >= 70){
+    return 'you got a C';
+  }
+  if (score >= 60){
+    return 'you got a D';
+  }
+  if (score < 60){
+    return 'you got an F';
+  }
   }
   
   
